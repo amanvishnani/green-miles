@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
     {
       title: 'Transactions',
       url: '/transaction',
-      icon: 'mail'
+      icon: 'swap-horizontal-outline'
     },
     {
       title: 'Outbox',
