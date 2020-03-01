@@ -13,7 +13,15 @@ const routes: Routes = [
   {
     path: 'transaction',
     loadChildren: () => import('./transaction/transaction.module').then( m => m.TransactionPageModule)
+  },  {
+    path: 'spend',
+    loadChildren: () => import('./spend/spend.module').then( m => m.SpendPageModule)
+  },
+  {
+    path: 'green-points',
+    loadChildren: () => import('./green-points/green-points.module').then( m => m.GreenPointsPageModule)
   }
+
 ];
 
 @NgModule({
