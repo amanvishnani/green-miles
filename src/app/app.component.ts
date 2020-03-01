@@ -15,17 +15,17 @@ export class AppComponent implements OnInit {
     {
       title: 'Transactions',
       url: '/transaction',
-      icon: 'swap-horizontal-outline'
+      icon: 'swap-horizontal'
     },
     {
       title: 'Spend',
       url: '/spend',
-      icon: 'paper-plane'
+      icon: 'card'
     },
     {
       title: 'Green points',
       url: '/green-points',
-      icon: 'paper-plane'
+      icon: 'leaf'
     }
   ];
   public labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];

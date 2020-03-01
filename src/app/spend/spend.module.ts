@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { SpendPageRoutingModule } from './spend-routing.module';
 
 import { SpendPage } from './spend.page';
+import { TransactionService } from '../transaction.service';
 
 @NgModule({
   imports: [

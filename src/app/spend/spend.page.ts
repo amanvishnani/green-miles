@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TransactionService } from '../transaction.service';
 
 @Component({
   selector: 'app-spend',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SpendPage implements OnInit {
 
-  constructor() { }
+  constructor(public ts: TransactionService) { }
 
   ngOnInit() {
+  }
+
+  spendOnEcoProducts() {
+    this.ts.spendOnEcoProducts()
+  }
+
+  spendOnNonEcoProducts() {
+    this.ts.spendOnNonEcoProducts()
   }
 
 }

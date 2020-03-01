@@ -9,23 +9,14 @@
 
 <ion-content>
   <ion-list>
-    <ion-card>
+    <ion-card *ngFor="let t of transactions">
       <ion-item>
-        <ion-icon name="leaf-outline" slot="end" style="color: green;"></ion-icon>
-        <ion-label>Nurtured Halifax</ion-label>
+        <ion-icon name="leaf-outline" slot="end" style="color: green;" *ngIf="t.type=='eco'"></ion-icon>
+        <ion-label>{{t.name}}</ion-label>
       </ion-item>
     
       <ion-card-content>
-        29 Feb 2020 | 100 CAD 
-      </ion-card-content>
-    </ion-card>
-    <ion-card>
-      <ion-item>
-        <ion-label>Irving Nova Scotia</ion-label>
-      </ion-item>
-    
-      <ion-card-content>
-        29 Feb 2020 | 19.08 CAD 
+        {{t.date | date: 'MMM d, y'}} | {{t.amount}} CAD 
       </ion-card-content>
     </ion-card>
   </ion-list>
