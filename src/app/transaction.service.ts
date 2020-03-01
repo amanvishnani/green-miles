@@ -21,7 +21,7 @@ export class TransactionService {
 
   constructor() { 
     this.transactions = []
-    this.spendOnEcoProducts(new Date(2020, 1, 10))
+    this.spendOnEcoProducts()
     this.spendOnNonEcoProducts(new Date(2020, 1, 11))
   }
   

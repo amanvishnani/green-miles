@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TransactionService } from '../transaction.service';
 
 @Component({
   selector: 'app-green-points',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GreenPointsPage implements OnInit {
   bar;
-  constructor() { }
+  constructor(public ts: TransactionService) { }
   
   ngOnInit() {
      // @ts-ignore
@@ -20,15 +21,18 @@ export class GreenPointsPage implements OnInit {
   }
 
   setGreenScore() {
-    let data = [{name: "a", type: "eco", value: 20}, {name: "a", type: "eco", value: 20}, {name: "a", type: "non", value: 20}];
-    data = data.filter(e => e.type == "eco");
-    console.log(data);
-    let target = 100;
+
+    let data = this.ts.transactions;
+    let target = 1500;
     let score = 0;
     for( let i of data) {
-      score += i.value*2;
+      console.log(i);
+      // if(data[i].type === "eco")
+      // score += data[i].amount*2;
     }
     this.bar.set(score*100/target);
+    console.log(data)
+    console.log(score);
   }
 
 }
