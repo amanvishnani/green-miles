@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TransactionService } from '../transaction.service';
-
+import { PopoverController } from '@ionic/angular';
+import {  } from "@angular/core"; 
 @Component({
   selector: 'app-green-points',
   templateUrl: './green-points.page.html',
@@ -8,8 +9,18 @@ import { TransactionService } from '../transaction.service';
 })
 export class GreenPointsPage implements OnInit {
   bar;
-  constructor(public ts: TransactionService) { }
-  
+  score = 0;
+  constructor(public ts: TransactionService, public popoverController: PopoverController) { }
+
+  async presentPopover(ev: any) {
+    const popover = await this.popoverController.create({
+      component: PopComponent,
+      event: ev,
+      translucent: true
+    });
+    return await popover.present();
+  }
+
   ngOnInit() {
      // @ts-ignore
      this.bar = new ldBar("#tree", {
@@ -21,18 +32,33 @@ export class GreenPointsPage implements OnInit {
   }
 
   setGreenScore() {
-
     let data = this.ts.transactions;
-    let target = 1500;
-    let score = 0;
+    let target = 200;
+    this.score = 0;
     for( let i of data) {
-      console.log(i);
-      // if(data[i].type === "eco")
-      // score += data[i].amount*2;
+      if(i.type === "eco")
+        this.score += i.amount*2;
     }
-    this.bar.set(score*100/target);
-    console.log(data)
-    console.log(score);
+    this.bar.set(this.score*100/target);
   }
 
+}
+
+@Component({
+  template: `
+    <ion-list>
+      <ion-list-header>Ionic</ion-list-header>
+      <button ion-item (click)="close()">Learn Ionic</button>
+      <button ion-item (click)="close()">Documentation</button>
+      <button ion-item (click)="close()">Showcase</button>
+      <button ion-item (click)="close()">GitHub Repo</button>
+    </ion-list>
+  `
+})
+export class PopComponent {
+  constructor() {}
+
+  close() {
+    // this.viewCtrl.dismiss();
+  }
 }

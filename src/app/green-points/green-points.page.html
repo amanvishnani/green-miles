@@ -10,48 +10,48 @@
 <ion-content>
   <ion-card>
     <ion-card-header style="margin: 0px auto;">
-      <ion-card-title style="align-items: center; color: green; display: flex; justify-content: center;"> Green points</ion-card-title>
+      <ion-card-title style="align-items: center; color: green; display: flex; justify-content: center;"> Green points
+      </ion-card-title>
     </ion-card-header>
     <ion-card-content style=" display: flex; justify-content: center;">
-      You have earned 35000 credits
+      You have earned {{score}} credits
     </ion-card-content>
   </ion-card>
-  <div class="ldBar label-center"
-      id="tree"
-      style="width: 17rem; height: 200px; margin: 0px auto;margin-bottom: 50px;"></div>
-      <ion-list style="margin-bottom: 50px;">
-        <ion-list-header>
-          Green Initiative Parnters
-        </ion-list-header>
+  <div class="ldBar label-center" id="tree" style="width: 17rem; height: 200px; margin: 0px auto;margin-bottom: 50px;">
+  </div>
+  <ion-list style="margin-bottom: 50px;">
+    <button (click)="presentPopover()" style="margin-bottom: 50px;">click</button>
+    <ion-list-header>
+      Green Initiative Parnters
+    </ion-list-header>
 
-        <ion-item>
-          <ion-avatar slot="start">
-            <img src="assets/toms_logosvg.svg">
-          </ion-avatar>
-          <ion-label>
-            <h2>TOMS</h2>
-            <h3>Stand for tomorrow</h3>
-            </ion-label>
-        </ion-item>
+    <ion-item>
+      <ion-avatar slot="start">
+        <img src="assets/toms_logosvg.svg">
+      </ion-avatar>
+      <ion-label>
+        <h2>TOMS</h2>
+        <h3>Stand for tomorrow</h3>
+      </ion-label>
+    </ion-item>
 
-        <ion-item class="item-text-wrap">
-          <ion-avatar slot="start">
-            <img src="assets/patagonia_logo.jpg">
-          </ion-avatar>
-          <ion-label>
-            <h2>Patagonia</h2>
-            <h3>build the best product</h3>
-            </ion-label>
-        </ion-item>        
-        <ion-item class="item-text-wrap">
-          <ion-avatar slot="start">
-            <img src="assets/lush_logo.png">
-          </ion-avatar>
-          <ion-label>
-            <h2>Lush cosmetics</h2>
-            <h3>dedicated to deliver eco friendly products</h3>
-            </ion-label>
-        </ion-item>
-    </ion-list>
+    <ion-item class="item-text-wrap">
+      <ion-avatar slot="start">
+        <img src="assets/patagonia_logo.jpg">
+      </ion-avatar>
+      <ion-label>
+        <h2>Patagonia</h2>
+        <h3>build the best product</h3>
+      </ion-label>
+    </ion-item>
+    <ion-item class="item-text-wrap">
+      <ion-avatar slot="start">
+        <img src="assets/lush_logo.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Lush cosmetics</h2>
+        <h3>dedicated to deliver eco friendly products</h3>
+      </ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
-

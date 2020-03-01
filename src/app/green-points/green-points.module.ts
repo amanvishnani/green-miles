@@ -6,7 +6,7 @@ import { IonicModule } from '@ionic/angular';
 
 import { GreenPointsPageRoutingModule } from './green-points-routing.module';
 
-import { GreenPointsPage } from './green-points.page';
+import { GreenPointsPage, PopComponent } from './green-points.page';
 
 @NgModule({
   imports: [
@@ -15,6 +15,6 @@ import { GreenPointsPage } from './green-points.page';
     IonicModule,
     GreenPointsPageRoutingModule
   ],
-  declarations: [GreenPointsPage]
+  declarations: [GreenPointsPage, PopComponent]
 })
 export class GreenPointsPageModule {}
