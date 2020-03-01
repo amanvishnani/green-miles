@@ -3,7 +3,7 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'transaction',
+    path: '',
     loadChildren: () => import('./transaction/transaction.module').then( m => m.TransactionPageModule)
   },
   {
@@ -13,7 +13,8 @@ const routes: Routes = [
   {
     path: 'transaction',
     loadChildren: () => import('./transaction/transaction.module').then( m => m.TransactionPageModule)
-  },  {
+  },
+  {
     path: 'spend',
     loadChildren: () => import('./spend/spend.module').then( m => m.SpendPageModule)
   },

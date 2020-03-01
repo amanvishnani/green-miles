@@ -10,6 +10,12 @@ export class GreenPointsPage implements OnInit {
   constructor() { }
 
   ngOnInit() {
+     // @ts-ignore
+     var bar = new ldBar("#tree", {
+      "type": 'fill',
+      "img": "assets/treeme.svg",
+      "value": 65
+     });
   }
 
 }
