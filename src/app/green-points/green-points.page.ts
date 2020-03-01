@@ -27,12 +27,11 @@ export class GreenPointsPage implements OnInit {
     let score = 0;
     for( let i of data) {
       console.log(i);
-      // if(data[i].type === "eco")
-      // score += data[i].amount*2;
+      if(i.type == "eco") {
+        score += i.amount*2;
+      }
     }
     this.bar.set(score*100/target);
-    console.log(data)
-    console.log(score);
   }
 
 }
